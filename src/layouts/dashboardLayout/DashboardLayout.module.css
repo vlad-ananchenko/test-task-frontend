@@ -1,0 +1,102 @@
+.root {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+}
+
+.hamburgerButton {
+  position: absolute;
+  top: 16px;
+  left: -90px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  z-index: 1100;
+  transition: left 0.3s ease;
+}
+
+@media (max-width: 1440px) {
+  .hamburgerButton {
+    left: -70px;
+  }
+}
+
+@media (max-width: 1245px) {
+  .hamburgerButton {
+    left: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hamburgerButton {
+    left: 10px;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.overlayOpen {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 240px;
+  height: 100vh;
+  background-color: #fff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.drawerOpen {
+  transform: translateX(0);
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.listItem {
+  margin-bottom: 8px;
+}
+
+.navLink {
+  text-decoration: none;
+  color: black;
+  display: block;
+  padding: 8px 12px;
+}
+
+.active {
+  color: blue;
+}
+
+.content {
+  flex: 1;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
